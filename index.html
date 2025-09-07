@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page - JavaScript Events & Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>🚀 Interactive Web Page</h1>
+            <p>Exploring JavaScript Events & Form Validation</p>
+            <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active" data-tab="home">Home</a></li>
+                <li><a href="#interactive" class="nav-link" data-tab="interactive">Interactive</a></li>
+                <li><a href="#forms" class="nav-link" data-tab="forms">Forms</a></li>
+                <li><a href="#faq" class="nav-link" data-tab="faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Home Tab -->
+            <section id="home" class="tab-content active">
+                <h2>Welcome to Interactive Web Development!</h2>
+                <p>This page demonstrates various JavaScript events, form validation, and interactive elements. Use the navigation above to explore different sections.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🎮 Interactive Elements</h3>
+                        <p>Counter, theme toggle, and dynamic content</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📋 Form Validation</h3>
+                        <p>Real-time validation with custom error messages</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>❓ FAQ Accordion</h3>
+                        <p>Collapsible sections with smooth animations</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Tab -->
+            <section id="interactive" class="tab-content">
+                <h2>Interactive Elements</h2>
+                
+                <!-- Counter Section -->
+                <div class="interactive-section">
+                    <h3>🔢 Counter Game</h3>
+                    <div class="counter-container">
+                        <button id="decrease-btn" class="btn btn-secondary">-</button>
+                        <span id="counter-display" class="counter-display">0</span>
+                        <button id="increase-btn" class="btn btn-primary">+</button>
+                    </div>
+                    <button id="reset-counter" class="btn btn-outline">Reset</button>
+                </div>
+
+                <!-- Mouse Events Section -->
+                <div class="interactive-section">
+                    <h3>🖱️ Mouse Events</h3>
+                    <div id="mouse-area" class="mouse-area">
+                        <p>Hover over this area to see mouse coordinates!</p>
+                        <div id="mouse-coords" class="mouse-coords">X: 0, Y: 0</div>
+                    </div>
+                </div>
+
+                <!-- Color Picker Section -->
+                <div class="interactive-section">
+                    <h3>🎨 Color Picker</h3>
+                    <div class="color-picker-container">
+                        <input type="color" id="color-picker" value="#3498db">
+                        <button id="apply-color" class="btn btn-primary">Apply Color</button>
+                    </div>
+                    <div id="color-preview" class="color-preview">Preview your color here!</div>
+                </div>
+            </section>
+
+            <!-- Forms Tab -->
+            <section id="forms" class="tab-content">
+                <h2>Form Validation Demo</h2>
+                
+                <!-- Contact Form -->
+                <form id="contact-form" class="contact-form">
+                    <h3>📝 Contact Us</h3>
+                    
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="fullName" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required>
+                        <span class="error-message" id="password-error"></span>
+                        <div class="password-strength" id="password-strength"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password *</label>
+                        <input type="password" id="confirm-password" name="confirmPassword" required>
+                        <span class="error-message" id="confirm-password-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="1" max="120">
+                        <span class="error-message" id="age-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Select a country</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message" id="country-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us what's on your mind..."></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Subscribe to our newsletter
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="link">Terms and Conditions</a> *
+                        </label>
+                        <span class="error-message" id="terms-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </section>
+
+            <!-- FAQ Tab -->
+            <section id="faq" class="tab-content">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is JavaScript event handling?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>JavaScript event handling allows you to respond to user interactions like clicks, mouse movements, keyboard input, and form submissions. It's the foundation of interactive web development.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Why is form validation important?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Form validation ensures data integrity, improves user experience by providing immediate feedback, and prevents invalid data from being submitted to the server.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What are the different types of events in JavaScript?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Common event types include: click, mouseover, mouseout, keydown, keyup, submit, change, focus, blur, and many more. Each serves a specific purpose in creating interactive experiences.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I create smooth animations with JavaScript?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can use CSS transitions, the Web Animations API, or libraries like GSAP. CSS transitions are often the simplest approach for basic animations triggered by JavaScript events.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What's the difference between preventDefault() and stopPropagation()?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>preventDefault() stops the default browser behavior (like form submission), while stopPropagation() prevents the event from bubbling up to parent elements. Both are essential for controlling event flow.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Interactive Web Page Demo. Built with HTML, CSS, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
